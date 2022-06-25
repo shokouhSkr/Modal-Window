@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Vazir"],
+        Malayalam: ['"Anek Malayalam"', "serif"],
       },
       screens: {
         "2xs": "375px",
