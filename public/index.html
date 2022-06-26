@@ -14,13 +14,39 @@
     <link rel="stylesheet" href="./build/tailwind.css" />
   </head>
   <body
-    class="container max-w-screen-md p-4 font-semibold font-Malayalam bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+    class="container max-w-screen-md relative p-4 font-Malayalam bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
   >
-    <div class="flex mt-8 justify-between">
-      <button class="btn btn-sound">Show modal 1</button>
-      <button class="btn btn-sound">Show modal 2</button>
-      <button class="btn btn-sound">Show modal 3</button>
-    </div>
+    <header class="flex mt-8 justify-between font-semibold mb-12">
+      <button class="btn btn-sound show-modal">Show modal 1</button>
+      <button class="btn btn-sound show-modal">Show modal 2</button>
+      <button class="btn btn-sound show-modal">Show modal 3</button>
+    </header>
+
+    <section>
+      <div
+        class="modal hidden drop-shadow-2xl bg-white fixed-center rounded-md w-96 h-80 p-8 pt-3 z-20"
+      >
+        <div class="flex justify-end">
+          <button
+            class="close-modal text-3xl hover:text-gray-600 transition-all duration-200 font-semibold"
+          >
+            &times;
+          </button>
+        </div>
+        <h1 class="text-lg font-semibold mb-4">I'm a modal window</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet adipisci incidunt ut
+          porro numquam ullam quae illo tempora sequi debitis tenetur laudantium voluptatum ipsa
+          laborum ipsam eius, vel exercitationem accusamus. porro numquam ullam quae illo tempora
+          sequi debitis tenetur laudantium voluptatum ipsa laborum ipsam eius, vel exercitationem
+          accusamus.
+        </p>
+      </div>
+    </section>
+
+    <div
+      class="overlay hidden fixed top-0 left-0 w-full h-full bg-[rgba(0, 0, 0, 0.6)] backdrop-blur-[3px] z-10"
+    ></div>
 
     <script src="/src/js/script.js"></script>
   </body>

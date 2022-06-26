@@ -5,6 +5,11 @@
 @layer components {
   .btn {
     @apply px-4 py-2 bg-white rounded-xl shadow-[0_5px_0_#d1d5db] active:translate-y-1 active:shadow-none;
-  },
-  
+  }
+  .center {
+    @apply grid place-items-center;
+  }
+  .fixed-center {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
 }
