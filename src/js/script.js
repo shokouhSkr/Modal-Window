@@ -1,19 +1,5 @@
 "use strict";
 
-// set button click sound
-const audio = new Audio();
-audio.src = "/src/assets/click.mp3";
-
-const btnsSound = document.querySelectorAll(".btn-sound");
-
-for (let i = 0; i < btnsSound.length; i++) {
-  btnsSound[i].addEventListener("click", () => {
-    audio.play();
-    // console.log("clicked!");
-  });
-}
-
-/*********************************************************************/
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModaL = document.querySelector(".close-modal");
@@ -30,6 +16,19 @@ const closeModal = function () {
   overlay.classList.add("hidden");
 };
 
+// set button click sound
+const audio = new Audio();
+audio.src = "/src/assets/click.mp3";
+
+const btnsSound = document.querySelectorAll(".btn-sound");
+
+for (let i = 0; i < btnsSound.length; i++) {
+  btnsSound[i].addEventListener("click", () => {
+    audio.play();
+    // console.log("clicked!");
+  });
+}
+
 // show modal
 for (let i = 0; i < btnsOpenModal.length; i++) {
   btnsOpenModal[i].addEventListener("click", openModal);
@@ -40,3 +39,12 @@ btnCloseModaL.addEventListener("click", closeModal);
 
 // hide modal by click on somewhere
 overlay.addEventListener("click", closeModal);
+
+// hide modal by press Esc key
+document.addEventListener("keydown", function (e) {
+  console.log(e.key);
+
+  if (e.key === "Escape") {
+    if (!modal.classList.contains("hidden")) closeModal();
+  }
+});
